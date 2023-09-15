@@ -39,8 +39,13 @@ public class KartyaTrukkKonzolon {
     }
 
     private static void melyik() {
-        System.out.print("melyik oszlop (1-3): ");
-        int oszlop = sc.nextInt();
+        boolean jo;
+        do{
+            System.out.print("melyik oszlop (1-3): ");
+            int oszlop = sc.nextInt();
+            jo = oszlop >= 1 && oszlop <= 3;
+        }while(!jo);
+        
     }
 
     private static void kever() {
