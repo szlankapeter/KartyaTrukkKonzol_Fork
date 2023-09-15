@@ -4,12 +4,12 @@ import java.util.Scanner;
 
 public class KartyaTrukkKonzolon {
 
-    private static String[] pakli = new String[22];
+   private static String[] pakli = new String[22];
     private static final Scanner sc = new Scanner(System.in);
 
     public static void main(String[] args) {
         feltolt();
-        for (int i = 0; i < 4; i++) {
+        for (int i = 0; i < 3; i++) {
             kirak();
             int oszlop = melyik();
             kever(oszlop);
@@ -69,8 +69,8 @@ public class KartyaTrukkKonzolon {
                 break;
             case 3:
                 for (int i = 1; i <= 7; i++) {
-                    ujPakli[i] = pakli[21 - (i - 1) * 3];
-                    ujPakli[i + 7] = pakli[19 - (i - 1) * 3];
+                    ujPakli[i] = pakli[19 - (i - 1) * 3];
+                    ujPakli[i + 7] = pakli[21 - (i - 1) * 3];
                     ujPakli[i + 14] = pakli[20 - (i - 1) * 3];
                 }
                 break;
@@ -81,4 +81,5 @@ public class KartyaTrukkKonzolon {
     private static void ezVolt() {
         System.out.println("A választott lap: " + pakli[11]);
     }
+
 }
