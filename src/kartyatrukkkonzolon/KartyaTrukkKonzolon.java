@@ -17,6 +17,18 @@ public class KartyaTrukkKonzolon {
         ezVolt();
     }
 
+    private static void feltolt() {
+        String[] szinek = {"P", "T", "Z", "M"};
+        String[] ertekek = {"Ász", "Kir", "Fel", "X", "IX", "VIII"};
+        int i = 1;
+        for (String szin : szinek) {
+            for (int e = 0; e < ertekek.length && i < pakli.length; e++) {
+                pakli[i++] = szin + "_" + ertekek[e];
+            }
+        }
+        
+    }
+    
     private static void kirak() {
         for (int i = 1; i < pakli.length; i++) {
             System.out.print(pakli[i] + " ");
@@ -39,16 +51,6 @@ public class KartyaTrukkKonzolon {
         System.out.println("A választott lap: " + pakli[11]);
     }
 
-    private static void feltolt() {
-        String[] szinek = {"P", "T", "Z", "M"};
-        String[] ertekek = {"Ász", "Kir", "Fel", "X", "IX", "VIII"};
-        int i = 1;
-        for (String szin : szinek) {
-            for (int e = 0; e < ertekek.length && i < pakli.length; e++) {
-                pakli[i++] = szin + "_" + ertekek[e];
-            }
-        }
-        
-    }
+    
     
 }
