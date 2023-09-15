@@ -9,7 +9,7 @@ public class KartyaTrukkKonzolon {
 
     public static void main(String[] args) {
         feltolt();
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < 4; i++) {
             kirak();
             int oszlop = melyik();
             kever(oszlop);
@@ -81,6 +81,4 @@ public class KartyaTrukkKonzolon {
     private static void ezVolt() {
         System.out.println("A választott lap: " + pakli[11]);
     }
-
-    
 }
