@@ -31,7 +31,7 @@ public class KartyaTrukkKonzolon {
     
     private static void kirak() {
         for (int i = 1; i < pakli.length; i++) {
-            System.out.print(pakli[i] + " ");
+            System.out.printf("%-8s",pakli[i]);
             if (i % 3 == 0) {
                 System.out.println("");
             }
@@ -50,7 +50,4 @@ public class KartyaTrukkKonzolon {
     private static void ezVolt() {
         System.out.println("A választott lap: " + pakli[11]);
     }
-
-    
-    
 }
