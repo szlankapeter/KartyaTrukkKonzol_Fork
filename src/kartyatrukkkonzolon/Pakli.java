@@ -10,7 +10,7 @@ package kartyatrukkkonzolon;
  */
 public class Pakli {
 
-    public String[] pakli = new String[22];
+    private Lap[] pakli = new Lap[22];
     
     
     public Pakli() {
@@ -18,7 +18,7 @@ public class Pakli {
         feltolt();
         for (int i = 0; i < 3; i++) {
             kirak();
-            int oszlop = melyik();
+            int oszlop = new KartyaTrukk().melyik();
             kever(oszlop);
         }
         ezVolt();
@@ -31,15 +31,14 @@ public class Pakli {
         int i = 1;
         for (String szin : szinek) {
             for (int e = 0; e < ertekek.length && i < pakli.length; e++) {
-                pakli[i++] = szin + "_" + ertekek[e];
+                this.pakli[i++] = new Lap(szin + "_" + ertekek[e]);
             }
         }
-
     }
     
     public void kirak() {
-        for (int i = 1; i < pakli.length; i++) {
-            System.out.printf("%-8s", pakli[i]);
+        for (int i = 1; i < this.pakli.length; i++) {
+            System.out.printf("%-8s", this.pakli[i].leiras);
             if (i % 3 == 0) {
                 System.out.println("");
             }
@@ -48,7 +47,7 @@ public class Pakli {
     
     public void kever(int oszlop) {
         // mindig középre a választott
-        String[] ujPakli = new String[22];
+        Lap[] ujPakli = new Lap[22];
         switch (oszlop) {
             case 1:
                 for (int i = 1; i <= 7; i++) {
@@ -76,7 +75,7 @@ public class Pakli {
     }
     
     public void ezVolt() {
-        System.out.println("A választott lap: " + pakli[11]);
+        System.out.println("A választott lap: " + pakli[11].leiras);
     }
     
     

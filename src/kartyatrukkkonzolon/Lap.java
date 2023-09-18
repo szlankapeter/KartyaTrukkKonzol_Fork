@@ -4,12 +4,10 @@
  */
 package kartyatrukkkonzolon;
 
-/**
- *
- * @author szlanka.peter
- */
 public class Lap {
 
+    public String[] pakli = new String[22];
+    
     public String leiras = "";
     
     
