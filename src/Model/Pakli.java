@@ -2,7 +2,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package kartyatrukkkonzolon;
+package Model;
+
+import View.KartyaTrukk;
 
 /**
  *
@@ -11,15 +13,16 @@ package kartyatrukkkonzolon;
 public class Pakli {
 
     private Lap[] pakli = new Lap[22];
-    
+    private KartyaTrukk KT = new KartyaTrukk();
     
     public Pakli() {
         
         feltolt();
         for (int i = 0; i < 3; i++) {
             kirak();
-            int oszlop = new KartyaTrukk().melyik();
+            int oszlop = KT.melyik();
             kever(oszlop);
+            KT.kiir("", "\n");
         }
         ezVolt();
         
@@ -38,11 +41,14 @@ public class Pakli {
     
     public void kirak() {
         for (int i = 1; i < this.pakli.length; i++) {
-            System.out.printf("%-8s", this.pakli[i].leiras);
+//            System.out.printf("%-8s", this.pakli[i].leiras);
+            String adat = this.pakli[i].leiras;
+            KT.kiir(adat, "\t");
             if (i % 3 == 0) {
-                System.out.println("");
+                KT.kiir("", "\n");
             }
         }
+        
     }
     
     public void kever(int oszlop) {
@@ -75,7 +81,8 @@ public class Pakli {
     }
     
     public void ezVolt() {
-        System.out.println("A választott lap: " + pakli[11].leiras);
+        String adat = "A választott lap: " + pakli[11].leiras;
+        KT.kiir(adat, "\n");
     }
     
     

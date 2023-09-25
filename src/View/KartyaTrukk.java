@@ -2,8 +2,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package kartyatrukkkonzolon;
+package View;
 
+import Model.Pakli;
 import java.util.Scanner;
 
 
@@ -11,16 +12,14 @@ public class KartyaTrukk {
     
     private static final Scanner sc = new Scanner(System.in);
 
-    public static void main(String[] args) {
-        new KartyaTrukk().indit();
-    }
     
-    private void indit(){
-            new Pakli();
-    }
     
     public KartyaTrukk() {
         
+    }
+
+    public void indit(){
+        new Pakli();
     }
     
     public int melyik() {
@@ -32,6 +31,10 @@ public class KartyaTrukk {
             jo = oszlop >= 1 && oszlop <= 3;
         } while (!jo);
         return oszlop;
+    }
+    
+    public void kiir(String adat, String tav){
+        System.out.print(adat + tav);
     }
     
     
