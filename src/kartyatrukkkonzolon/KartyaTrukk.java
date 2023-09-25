@@ -12,7 +12,11 @@ public class KartyaTrukk {
     private static final Scanner sc = new Scanner(System.in);
 
     public static void main(String[] args) {
-        new Pakli();
+        new KartyaTrukk().indit();
+    }
+    
+    private void indit(){
+            new Pakli();
     }
     
     public KartyaTrukk() {
