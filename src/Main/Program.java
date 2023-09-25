@@ -4,7 +4,6 @@
  */
 package Main;
 
-import Model.Pakli;
 import View.KartyaTrukk;
 
 /**

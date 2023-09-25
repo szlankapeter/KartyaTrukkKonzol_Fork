@@ -4,28 +4,13 @@
  */
 package Model;
 
-import View.KartyaTrukk;
-
-/**
- *
- * @author szlanka.peter
- */
 public class Pakli {
 
     private Lap[] pakli = new Lap[22];
-    private KartyaTrukk KT = new KartyaTrukk();
+    private Lap[] ujPakli = new Lap[22];
     
     public Pakli() {
-        
         feltolt();
-        for (int i = 0; i < 3; i++) {
-            kirak();
-            int oszlop = KT.melyik();
-            kever(oszlop);
-            KT.kiir("", "\n");
-        }
-        ezVolt();
-        
     }
     
     public void feltolt() {
@@ -39,21 +24,9 @@ public class Pakli {
         }
     }
     
-    public void kirak() {
-        for (int i = 1; i < this.pakli.length; i++) {
-//            System.out.printf("%-8s", this.pakli[i].leiras);
-            String adat = this.pakli[i].leiras;
-            KT.kiir(adat, "\t");
-            if (i % 3 == 0) {
-                KT.kiir("", "\n");
-            }
-        }
-        
-    }
-    
     public void kever(int oszlop) {
         // mindig középre a választott
-        Lap[] ujPakli = new Lap[22];
+        
         switch (oszlop) {
             case 1:
                 for (int i = 1; i <= 7; i++) {
@@ -79,11 +52,22 @@ public class Pakli {
         }
         pakli = ujPakli;
     }
-    
-    public void ezVolt() {
-        String adat = "A választott lap: " + pakli[11].leiras;
-        KT.kiir(adat, "\n");
+
+    public Lap[] getPakli() {
+        return pakli;
     }
+
+    public Lap[] getUjPakli() {
+        return ujPakli;
+    }
+    
+    
+    
+    public String ezVolt(){
+        return pakli[11].leiras;
+    }
+    
+    
     
     
 }
